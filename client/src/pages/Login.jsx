@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import TextBox from "../componets/TextBox";
 
 const Login = () => {
   const user = "";
@@ -53,7 +54,19 @@ const Login = () => {
             </div>
 
             {/* form inpt */}
-            <div></div>
+            <div>
+              <TextBox
+                placeholder="email@example.com"
+                type="email"
+                name="email"
+                label="Email Address"
+                className="w-full rounded-full"
+                register={register("email", {
+                  required: "Email Address is required!",
+                })}
+                error={errors.email ? errors.email.message : ""}
+              />
+            </div>
           </form>
         </div>
       </div>
