@@ -48,9 +48,9 @@ const Login = () => {
               <p className="text-blue-600 text-3xl font-bold text-center">
                 Welcome back!
               </p>
-              <span className="text-center text-gray-700 text-base">
+              <p className="text-center text-gray-700 text-base ">
                 Keep all your credential safe.
-              </span>
+              </p>
             </div>
 
             {/* form inpt */}
