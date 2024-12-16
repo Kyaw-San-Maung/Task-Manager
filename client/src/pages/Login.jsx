@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-[#f3f4f6]">
-      <div className="w-full md:w-auto gap-0 flex md:gap-56 flex-col md:flex-row items-center justify-center">
+      <div className="w-full md:w-auto gap-0 flex md:gap-x-64 flex-col md:flex-row items-center justify-center">
         {/* Left side */}
         <div className="h-full w-full lg:w-2/3 flex flex-col items-center justify-center">
           <div className="w-full md:max-w-lg 2xl:max-w-3xl flex flex-col items-center justify-center gap-5 md:gap-y-10 2xl:-mt-20">
@@ -87,7 +87,7 @@ const Login = () => {
               <Button
                 type="submit"
                 label="submit"
-                className="w-full bg-blue-600 rounded-full"
+                className="w-full bg-blue-600 rounded-full mt-6"
               />
             </div>
           </form>
