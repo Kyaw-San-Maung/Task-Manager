@@ -53,7 +53,7 @@ const Login = () => {
               </p>
             </div>
 
-            {/* form inpt */}
+            {/* form input */}
             <div>
               <TextBox
                 placeholder="email@example.com"
@@ -66,6 +66,21 @@ const Login = () => {
                 })}
                 error={errors.email ? errors.email.message : ""}
               />
+              <TextBox
+                placeholder="your password"
+                type="password"
+                name="password"
+                label="Password"
+                className="w-full rounded-full"
+                register={register("email", {
+                  required: "Email Address is required!",
+                })}
+                error={errors.email ? errors.email.message : ""}
+              />
+
+              <span className="text-sm text-gray-500 hover:text-blue-600 hover:underline cursor-pointer">
+                Forget Password?
+              </span>
             </div>
           </form>
         </div>
