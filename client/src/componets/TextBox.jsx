@@ -3,7 +3,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 
 const TextBox = React.forwardRef(
-  ({ type, placeholder, label, className, register, name, error }, ref) => {
+  ({ type, placeholder, label, className, register, name, error }) => {
     return (
       <div className="w-full flex flex-col gap-1 py-3">
         {label && (
@@ -16,7 +16,6 @@ const TextBox = React.forwardRef(
             type={type}
             name={name}
             placeholder={placeholder}
-            ref={ref}
             {...register}
             aria-invalid={error ? "true" : "false"}
             className={clsx(
@@ -24,6 +23,7 @@ const TextBox = React.forwardRef(
               className
             )}
           />
+          {error && <p className="text-red-600 text-lg mt-2">{error}</p>}
         </div>
       </div>
     );
@@ -39,7 +39,7 @@ TextBox.propTypes = {
   placeholder: PropTypes.string,
   label: PropTypes.string,
   className: PropTypes.string,
-  register: PropTypes.object,
+  register: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   error: PropTypes.bool,
 };

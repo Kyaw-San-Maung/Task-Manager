@@ -48,7 +48,7 @@ const Login = () => {
             className="form-container w-full md:w-[400px] flex-col gap-y-8 bg-white px-10 pt-14 pb-14">
             <div className="">
               <p className="text-blue-600 text-3xl font-bold text-center">
-                Welcome back!
+                Welcome backk!
               </p>
               <p className="text-center text-gray-700 text-base ">
                 Keep all your credential safe.
@@ -74,10 +74,10 @@ const Login = () => {
                 name="password"
                 label="Password"
                 className="w-full rounded-full"
-                register={register("email", {
-                  required: "Email Address is required!",
+                register={register("password", {
+                  required: "Password is really required!",
                 })}
-                error={errors.email ? errors.email.message : ""}
+                error={errors.password ? errors.password.message : ""}
               />
 
               <span className="text-sm text-gray-500 hover:text-blue-600 hover:underline cursor-pointer">
