@@ -3,7 +3,7 @@ import clsx from "clsx";
 import PropTypes from "prop-types";
 
 const TextBox = React.forwardRef(
-  ({ type, placeholder, label, className, register, name, error }) => {
+  ({ type, placeholder, label, className, register, name, error }, ref) => {
     return (
       <div className="w-full flex flex-col gap-1 py-3">
         {label && (
@@ -41,7 +41,7 @@ TextBox.propTypes = {
   className: PropTypes.string,
   register: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
-  error: PropTypes.bool,
+  error: PropTypes.string,
 };
 
 export default TextBox;

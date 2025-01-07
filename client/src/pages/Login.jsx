@@ -5,7 +5,7 @@ import TextBox from "../componets/TextBox";
 import { Button } from "../componets/Button";
 
 const Login = () => {
-  const user = "";
+  const user = true;
   const {
     register,
     handleSubmit,
@@ -20,7 +20,7 @@ const Login = () => {
 
   useEffect(() => {
     user && navigate("/dashboard");
-  }, [user]);
+  }, [user]); // Ensure `[]` is used to avoid unnecessary re-renders
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-[#f3f4f6]">
