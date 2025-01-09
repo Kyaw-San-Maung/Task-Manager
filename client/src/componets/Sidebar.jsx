@@ -2,6 +2,7 @@ import {
   MdDashboard,
   MdOutlineAddTask,
   MdOutlinePendingActions,
+  MdSettings,
   MdTaskAlt,
 } from "react-icons/md";
 import { FaTasks, FaTrashAlt, FaUsers } from "react-icons/fa";
@@ -85,10 +86,18 @@ function Sidebar() {
         </p>
         <span className="text-2xl font-bold text-black">Task Me</span>
       </h1>
+      {/* Sider bar Taps */}
       <div className="flex-1 flex-col py-4">
         {sidebarLinks.map((link) => (
           <NavLink el={link} key={link.label} />
         ))}
+      </div>
+      {/* Setting buttone */}
+      <div className="">
+        <button className="w-full flex gap-3 px-5 py-2 items-center text-lg text-gray-800 ">
+          <MdSettings />
+          <span>Setting</span>
+        </button>
       </div>
     </div>
   );
