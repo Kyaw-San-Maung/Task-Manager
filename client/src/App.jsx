@@ -8,6 +8,7 @@ import TaskDetails from "./pages/TaskDetails";
 import Login from "./pages/Login";
 import { Toaster } from "sonner";
 import Sidebar from "./componets/Sidebar";
+import Navbar from "./componets/Navbar";
 
 function Layout() {
   const user = true;
@@ -21,7 +22,7 @@ function Layout() {
       </div>
       {/* <MobileSidebar /> */}
       <div className="flex-1 overflow-y-auto">
-        {/* <Navbar /> */}
+        <Navbar />
         <div className="p-4 2xl:px-10">
           <Outlet />
         </div>
