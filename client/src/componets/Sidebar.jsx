@@ -5,9 +5,10 @@ import {
   MdTaskAlt,
 } from "react-icons/md";
 import { FaTasks, FaTrashAlt, FaUsers } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { authActions } from "../redux/slices/authSlice";
+import clsx from "clsx";
 const linkData = [
   {
     label: "Dashboard",
@@ -47,16 +48,33 @@ const linkData = [
 ];
 
 function Sidebar() {
-  const user = true;
+  const user = { isAdmin: true };
 
   const dispatch = useDispatch();
 
-  const Location = useLocation();
+  const location = useLocation();
 
   const sidebarLinks = user?.isAdmin ? linkData : linkData.slice(0, 5);
 
   const closeSidebar = () => {
     dispatch(authActions.setOpenSlider(false));
+  };
+
+  const NavLink = ({ el }) => {
+    return (
+      <Link
+        to={el.link}
+        onClick={closeSidebar}
+        className={clsx(
+          "w-full mb-3 lg:w-3/4 flex gap-3 px-5 py-2 rounded-full items-center text-gray-800 text-base hover:bg-[#2564ed2d]",
+          location.pathname.includes(el.link)
+            ? "bg-[#2564ed] text-yellow-50"
+            : ""
+        )}>
+        {el.icon}
+        <span className="hover:text-[#2564ed]">{el.label}</span>
+      </Link>
+    );
   };
 
   return (
@@ -67,6 +85,11 @@ function Sidebar() {
         </p>
         <span className="text-2xl font-bold text-black">Task Me</span>
       </h1>
+      <div className="flex-1 flex-col py-4">
+        {sidebarLinks.map((link) => (
+          <NavLink el={link} key={link.label} />
+        ))}
+      </div>
     </div>
   );
 }
