@@ -1,7 +1,7 @@
-import { FaHamburger } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { authActions } from "../redux/slices/authSlice";
-import { MdOutlineSearch } from "react-icons/md";
+import { MdMenu, MdOutlineSearch } from "react-icons/md";
+import UserAvator from "./UserAvator";
 
 const Navbar = () => {
   const user = true;
@@ -14,7 +14,7 @@ const Navbar = () => {
         <button
           className="text-2xl text-gray-500 block md:hidden"
           onClick={() => dispatch(authActions.setOpenSlider(true))}>
-          <FaHamburger />
+          <MdMenu />
         </button>
 
         <div className="w-64 2xl:w-[400px] flex items-center py-2 px-3 gap-2 rounded-full bg-[#f3f4f6]">
@@ -31,6 +31,7 @@ const Navbar = () => {
         {/* Notification */}
 
         {/* user avator */}
+        <UserAvator />
       </div>
     </div>
   );
